@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Create Departamento Empresa
+    Crear Departamento Empresa
 @endsection
 
 @section('content')

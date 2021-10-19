@@ -14,7 +14,7 @@
                             <span class="card-title">Mostrar Departamento Empresa</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('departamento-empresas.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('departamento-empresas.index') }}"> Atras</a>
                         </div>
                     </div>
 
@@ -30,7 +30,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Empresa:</strong>
-                            {{ $departamentoEmpresa->empresa_id }}
+                            {{ $departamentoEmpresa->empresa->nombre }}
                         </div>
 
                     </div>

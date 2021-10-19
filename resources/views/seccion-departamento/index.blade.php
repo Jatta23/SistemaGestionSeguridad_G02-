@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Seccion Departamento
+    Seccion de departamento
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('seccion-departamentos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Registrar') }}
                                 </a>
                               </div>
                         </div>
@@ -37,7 +37,7 @@
                                         <th>No</th>
 
 										<th>Descripcion</th>
-										<th>Departamento Empresa Id</th>
+										<th>Departamento</th>
 
                                         <th></th>
                                     </tr>
@@ -48,15 +48,15 @@
                                             <td>{{ ++$i }}</td>
 
 											<td>{{ $seccionDepartamento->descripcion }}</td>
-											<td>{{ $seccionDepartamento->departamento_empresa_id }}</td>
+											<td>{{ $seccionDepartamento->departamentoEmpresa->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('seccion-departamentos.destroy',$seccionDepartamento->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('seccion-departamentos.show',$seccionDepartamento->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('seccion-departamentos.edit',$seccionDepartamento->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('seccion-departamentos.show',$seccionDepartamento->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('seccion-departamentos.edit',$seccionDepartamento->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>

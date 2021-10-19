@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Create Seccion Departamento
+    Crear Seccion Departamento
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Seccion Departamento</span>
+                        <span class="card-title">Crear Seccion de departamento</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('seccion-departamentos.store') }}"  role="form" enctype="multipart/form-data">

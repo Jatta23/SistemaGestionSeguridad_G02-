@@ -11,22 +11,22 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Seccion Departamento</span>
+                            <span class="card-title">Mostrar Seccion de departamento</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('seccion-departamentos.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('seccion-departamentos.index') }}"> Atras</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Descripcion:</strong>
                             {{ $seccionDepartamento->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Departamento Empresa Id:</strong>
-                            {{ $seccionDepartamento->departamento_empresa_id }}
+                            <strong>Departamento:</strong>
+                            {{ $seccionDepartamento->departamentoEmpresa->nombre }}
                         </div>
 
                     </div>

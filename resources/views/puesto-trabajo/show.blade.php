@@ -11,15 +11,15 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Puesto Trabajo</span>
+                            <span class="card-title">Mostrar Puesto de trabajo</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('puesto-trabajos.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('puesto-trabajos.index') }}"> Atras</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <strong>Nombre:</strong>
                             {{ $puestoTrabajo->nombre }}
@@ -30,11 +30,11 @@
                         </div>
                         <div class="form-group">
                             <strong>Salario:</strong>
-                            {{ $puestoTrabajo->salario }}
+                            ${{ $puestoTrabajo->salario }}
                         </div>
                         <div class="form-group">
                             <strong>Seccion Departamento Id:</strong>
-                            {{ $puestoTrabajo->seccion_departamento_id }}
+                            {{ $puestoTrabajo->seccionDepartamento->descripcion }}
                         </div>
 
                     </div>

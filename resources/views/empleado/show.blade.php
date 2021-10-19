@@ -14,7 +14,7 @@
                             <span class="card-title">Mostrar Empleado</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('empleados.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('empleados.index') }}"> Atras</a>
                         </div>
                     </div>
 
@@ -30,34 +30,34 @@
                         </div>
                         <div class="form-group">
                             <strong>Genero:</strong>
-                            {{ $empleado->genero_id }}
+                            {{ $empleado->genero->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Estado Civil:</strong>
-                            {{ $empleado->estado_civil_id }}
+                            {{ $empleado->estadoCivil->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Puesto Trabajo:</strong>
+                            <strong>Puesto de trabajo:</strong>
                             {{ $empleado->puestoTrabajo->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Dui:</strong>
+                            <strong>DUI:</strong>
                             {{ $empleado->dui }}
                         </div>
                         <div class="form-group">
-                            <strong>Nit:</strong>
+                            <strong>NIT:</strong>
                             {{ $empleado->nit }}
                         </div>
                         <div class="form-group">
-                            <strong>Isss:</strong>
+                            <strong>numero de afiliación Isss:</strong>
                             {{ $empleado->isss }}
                         </div>
                         <div class="form-group">
-                            <strong>Nup:</strong>
+                            <strong>NUP:</strong>
                             {{ $empleado->nup }}
                         </div>
                         <div class="form-group">
-                            <strong>Direccion:</strong>
+                            <strong>Dirección:</strong>
                             {{ $empleado->direccion }}
                         </div>
                         <div class="form-group">

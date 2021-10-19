@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Update Departamento Empresa
+    Editar Departamento Empresa
 @endsection
 
 @section('content')

@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('departamento-empresas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Registrar') }}
                                 </a>
                               </div>
                         </div>
@@ -50,7 +50,7 @@
 
 											<td>{{ $departamentoEmpresa->nombre }}</td>
 											<td>{{ $departamentoEmpresa->numero_empleados }}</td>
-											<td>{{ $departamentoEmpresa->empresa_id }}</td>
+											<td>{{ $departamentoEmpresa->empresa->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('departamento-empresas.destroy',$departamentoEmpresa->id) }}" method="POST">
