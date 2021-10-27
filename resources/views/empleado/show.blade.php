@@ -41,6 +41,14 @@
                             {{ $empleado->puestoTrabajo->nombre }}
                         </div>
                         <div class="form-group">
+                            <strong>Seccion Departamento:</strong>
+                            {{ $empleado->puestoTrabajo->seccionDepartamento->descripcion }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Departamento Empresa:</strong>
+                            {{ $empleado->puestoTrabajo->seccionDepartamento->departamentoEmpresa->nombre }}
+                        </div>
+                        <div class="form-group">
                             <strong>DUI:</strong>
                             {{ $empleado->dui }}
                         </div>

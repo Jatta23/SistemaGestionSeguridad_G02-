@@ -14,6 +14,7 @@ class PuestoTrabajo extends Migration
     public function up()
     {
         Schema::create('puesto_trabajos', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('descripcion');
@@ -22,7 +23,7 @@ class PuestoTrabajo extends Migration
             $table->timestamps();
 
             //laves foraneas
-            $table->foreign('seccion_departamento_id')->references('id')->on('seccion_departamentos');
+            $table->foreign('seccion_departamento_id')->references('id')->on('seccion_departamentos')->onDelete("cascade");
         });
     }
 

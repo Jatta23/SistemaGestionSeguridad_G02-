@@ -33,9 +33,15 @@
                             ${{ $puestoTrabajo->salario }}
                         </div>
                         <div class="form-group">
-                            <strong>Seccion Departamento Id:</strong>
+                            <strong>Seccion Departamento :</strong>
                             {{ $puestoTrabajo->seccionDepartamento->descripcion }}
                         </div>
+                        <div class="form-group">
+                            <strong>Departamento :</strong>
+                            {{ $puestoTrabajo->seccionDepartamento->departamentoEmpresa->nombre }}
+                        </div>
+
+
 
                     </div>
                 </div>

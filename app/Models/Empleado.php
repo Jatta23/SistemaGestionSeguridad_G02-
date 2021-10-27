@@ -71,7 +71,7 @@ class Empleado extends Model
      */
     public function estadoCivil()
     {
-        return $this->hasOne('App\Models\EstadoCivil', 'id', 'estado_civil_id');
+        return $this->hasOne('App\Models\EstadoCivile', 'id', 'estado_civil_id');
     }
 
     /**

@@ -14,6 +14,7 @@ class DepartamentoEmpresa extends Migration
     public function up()
     {
         Schema::create('departamento_empresas', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->integer('numero_empleados');
@@ -21,7 +22,7 @@ class DepartamentoEmpresa extends Migration
             $table->timestamps();
 
             //llaves foraneas
-            $table->foreign('empresa_id')->references('id')->on('empresas');
+            $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete("cascade");
         });
     }
 

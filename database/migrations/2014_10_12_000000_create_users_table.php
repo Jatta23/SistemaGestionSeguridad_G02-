@@ -17,10 +17,17 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->unsignedBigInteger("rol_id")->nullable();
+            $table->unsignedBigInteger('estado_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            //Llave foranea
+            $table->foreign('rol_id')->references('id')->on('roles')->onDelete("cascade");
+            $table->foreign('estado_id')->references('id')->on('estados')->onDelete("cascade");
+
         });
     }
 

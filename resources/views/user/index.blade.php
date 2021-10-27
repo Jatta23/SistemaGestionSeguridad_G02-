@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Puesto de trabajo
+    Usuarios
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Puesto Trabajo') }}
+                                {{ __('User') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('puesto-trabajos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Registrar') }}
                                 </a>
                               </div>
@@ -36,29 +36,28 @@
                                     <tr>
                                         <th>No</th>
 
-										<th>Nombre</th>
-                                        <!--
-										<th>Descripcion</th>-->
-										<th>Salario</th>
-										<th>Seccion del Departamento</th>
+										<th>Name</th>
+										<th>Email</th>
+										<th>Rol </th>
+										<th>Estado </th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($puestoTrabajos as $puestoTrabajo)
+                                    @foreach ($users as $user)
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-											<td>{{ $puestoTrabajo->nombre }}</td>
-										<!--	<td>{{ $puestoTrabajo->descripcion }}</td>-->
-											<td>${{ $puestoTrabajo->salario }}</td>
-											<td>{{ $puestoTrabajo->seccionDepartamento->descripcion }}</td>
+											<td>{{ $user->name }}</td>
+											<td>{{ $user->email }}</td>
+											<td>{{ $user->roles->name }}</td>
+											<td>{{ $user->estados->name }}</td>
 
                                             <td>
-                                                <form action="{{ route('puesto-trabajos.destroy',$puestoTrabajo->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('puesto-trabajos.show',$puestoTrabajo->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('puesto-trabajos.edit',$puestoTrabajo->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                                <form action="{{ route('users.destroy',$user->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('users.show',$user->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('users.edit',$user->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
@@ -71,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $puestoTrabajos->links() !!}
+                {!! $users->links() !!}
             </div>
         </div>
     </div>

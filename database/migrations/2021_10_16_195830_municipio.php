@@ -14,12 +14,13 @@ class Municipio extends Migration
     public function up()
     {
         Schema::create('municipios', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->bigIncrements('id');
             $table->string('descripcion');
             $table->unsignedBigInteger('departamento_id');
             $table->timestamps();
 
-            $table->foreign('departamento_id')->references('id')->on('departamentos');
+            $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete("cascade");
         });
     }
 

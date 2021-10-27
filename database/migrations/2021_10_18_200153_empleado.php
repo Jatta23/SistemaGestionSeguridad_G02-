@@ -14,6 +14,7 @@ class Empleado extends Migration
     public function up()
     {
         Schema::create('empleados', function (Blueprint $table) {
+            $table->engine="InnoDB";
             $table->bigIncrements('id');
             $table->string('nombres');
             $table->string('apellidos');
@@ -31,10 +32,10 @@ class Empleado extends Migration
             $table->timestamps();
 
             //laves foraneas
-            $table->foreign('genero_id')->references('id')->on('generos');
-            $table->foreign('estado_civil_id')->references('id')->on('estado_civiles');
-            $table->foreign('municipio_id')->references('id')->on('municipios');
-            $table->foreign('puesto_trabajo_id')->references('id')->on('puesto_trabajos');
+            $table->foreign('genero_id')->references('id')->on('generos')->onDelete("cascade");
+            $table->foreign('estado_civil_id')->references('id')->on('estado_civiles')->onDelete("cascade");
+            $table->foreign('municipio_id')->references('id')->on('municipios')->onDelete("cascade");
+            $table->foreign('puesto_trabajo_id')->references('id')->on('puesto_trabajos')->onDelete("cascade");
         });
     }
 

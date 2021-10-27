@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Genero extends Migration
+class Estados extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class Genero extends Migration
      */
     public function up()
     {
-        Schema::create('generos', function (Blueprint $table) {
-            $table->engine = "InnoDB";
-            $table->bigIncrements('id');
-            $table->string('descripcion');
+        Schema::create('estados', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class Genero extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('genero');
+        Schema::dropIfExists('roles');
     }
 }

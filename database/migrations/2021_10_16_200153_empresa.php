@@ -14,6 +14,7 @@ class Empresa extends Migration
     public function up()
     {
         Schema::create('empresas', function (Blueprint $table) {
+            $table->engine = "InnoDB";
             $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('clasificacion');

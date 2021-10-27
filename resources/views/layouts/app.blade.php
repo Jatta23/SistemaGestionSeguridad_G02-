@@ -47,6 +47,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('empleados.index') }}">{{ __('Empleados') }}</a>
                         </li>
+                        @if(Auth::user()->rol_id==1)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.index') }}">{{ __('Usuarios') }}</a>
+                        </li>
+                        @endif
                         @endauth
 
                     </ul>
