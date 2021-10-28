@@ -51,8 +51,9 @@
 
 											<td>{{ $user->name }}</td>
 											<td>{{ $user->email }}</td>
-											<td>{{ $user->roles->name }}</td>
-											<td>{{ $user->estados->name }}</td>
+
+                                            <td>{{ $user->roles->name }}</td>
+                                            <td>{{ $user->estados->name }}</td>
 
                                             <td>
                                                 <form action="{{ route('users.destroy',$user->id) }}" method="POST">

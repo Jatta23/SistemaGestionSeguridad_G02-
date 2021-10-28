@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Notifications\CambiarPassword;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -44,6 +46,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+
     public function roles()
     {
         return $this->hasOne('App\Models\Role', 'id', 'rol_id');
@@ -52,5 +56,10 @@ class User extends Authenticatable
     public function estados()
     {
         return $this->hasOne('App\Models\Estado', 'id', 'estado_id');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new CambiarPassword($token));
     }
 }
