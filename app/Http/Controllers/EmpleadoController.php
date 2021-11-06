@@ -8,6 +8,11 @@ use App\Models\Genero;
 use App\Models\EstadoCivile;
 use App\Models\Municipio;
 
+//Adición
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use App\Models\User;
+
 
 use Illuminate\Http\Request;
 

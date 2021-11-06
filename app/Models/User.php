@@ -25,6 +25,7 @@ class User extends Authenticatable
         'password',
         'rol_id',
         'estado_id',
+        'google2fa_secret',
     ];
 
     /**
@@ -35,7 +36,29 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'google2fa_secret',
     ];
+
+    /*
+    public function setGoogle2faSecretAttribute($value)
+    {
+         $this->attributes['google2fa_secret'] = encrypt($value);
+    }
+    */
+
+    /***
+     * Decrypt the user's google_2fa secret.
+     *
+     * @param  string  $value
+     * @return string
+     */
+
+    /*
+    public function getGoogle2faSecretAttribute($value)
+    {
+        return decrypt($value);
+    }
+    */
 
     /**
      * The attributes that should be cast.
