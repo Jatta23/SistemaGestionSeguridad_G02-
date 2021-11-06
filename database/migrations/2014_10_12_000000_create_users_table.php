@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('token_login')->nullable();
 
             //Llave foranea
             $table->foreign('rol_id')->references('id')->on('roles')->onDelete("cascade");

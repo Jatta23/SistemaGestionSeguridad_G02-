@@ -1,6 +1,23 @@
+<?php
+		session_start();
+        if (!isset($_SESSION['tiempo'])) {
+            $_SESSION['tiempo']=time();
+        }
+        else if (time() - $_SESSION['tiempo'] > 10) {
+            session_destroy();
+            /* Aquí redireccionas a la url especifica */
+            header("Location: logout");
+            //return '/resources/views/logout';
+            die();
+        }
+        $_SESSION['tiempo']=time(); //Si hay actividad seteamos el valor al tiempo actual
+	?>
+
 @extends('layouts.app')
 
 @section('content')
+
+
 
 <div class="container">
     <div class="row">
