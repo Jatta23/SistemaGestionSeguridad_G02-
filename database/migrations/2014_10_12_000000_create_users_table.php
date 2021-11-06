@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->unsignedBigInteger("rol_id")->nullable()->default('2');     //se debera cambiar luego
-            $table->unsignedBigInteger('estado_id')->nullable()->default('1');  // se debera cambiar luego el default
+            $table->unsignedBigInteger('estado_id')->nullable()->default('2');  // se debera cambiar luego el default
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
