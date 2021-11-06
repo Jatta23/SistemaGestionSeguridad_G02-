@@ -34,7 +34,27 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="nav nav-pills">
+
+                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link " href="{{ route('departamento-empresas.index') }}">{{ __('Departamentos') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('seccion-departamentos.index') }}">{{ __('Secciones') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('puesto-trabajos.index') }}">{{ __('Puestos') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('empleados.index') }}">{{ __('Empleados') }}</a>
+                        </li>
+                        @if(Auth::user()->rol_id==1)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('users.index') }}">{{ __('Usuarios') }}</a>
+                        </li>
+                        @endif
+                        @endauth
 
                     </ul>
 
