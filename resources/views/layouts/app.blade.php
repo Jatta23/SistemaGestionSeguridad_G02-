@@ -35,6 +35,7 @@
                     <ul class="nav nav-pills">
 
                         @auth
+                        @if(Auth::user()->rol_id==1)
                         <li class="nav-item">
                             <a class="nav-link " href="{{ route('departamento-empresas.index') }}">{{ __('Departamentos') }}</a>
                         </li>
@@ -47,7 +48,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('empleados.index') }}">{{ __('Empleados') }}</a>
                         </li>
-                        @if(Auth::user()->rol_id==1)
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('users.index') }}">{{ __('Usuarios') }}</a>
                         </li>
